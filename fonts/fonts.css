@@ -8,13 +8,14 @@
   font-display: swap;
 }
 
+/* Вариативный шрифт: обычный стиль */
 @font-face {
   font-family: 'Inter-Variable';
   src:
     local('Inter-Variable'),
     url('../fonts/Inter-Variable.woff2') format('woff2 supports variations'),
     url('../fonts/Inter-Variable.woff2') format('woff2-variations');
-  font-weight: 100 900; /* весь диапазон начертаний */
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -25,7 +26,30 @@
     local('Inter-Variable'),
     url('../fonts/Inter-Variable.woff2') format('woff2 supports variations'),
     url('../fonts/Inter-Variable.woff2') format('woff2-variations');
-  font-weight: 100 900;
-  font-style: italic; /* для наклонного текста */
+  font-weight: 785;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Вариативный шрифт: italic */
+@font-face {
+  font-family: 'Inter-Variable';
+  src:
+    local('Inter-Variable'),
+    url('../fonts/Inter-Variable.woff2') format('woff2 supports variations'),
+    url('../fonts/Inter-Variable.woff2') format('woff2-variations');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter-Variable';
+  src:
+    local('Inter-Variable'),
+    url('../fonts/Inter-Variable.woff2') format('woff2 supports variations'),
+    url('../fonts/Inter-Variable.woff2') format('woff2-variations');
+  font-weight: 785;
+  font-style: italic;
   font-display: swap;
 }
