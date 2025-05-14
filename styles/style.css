@@ -80,7 +80,10 @@
   display: block;
   object-fit: cover;
   object-position: center;
-  inline-size: 100%;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 696px;
+  margin-inline: auto;
 }
 
 .card__image-label {
@@ -120,7 +123,7 @@
   padding: 0;
   outline: 2px solid transparent;
   background: none;
-  transition: outline 0.3s linear;
+  transition: outline 0.3s ease;
   cursor: pointer;
   inline-size: 39px;
   block-size: 34px;
@@ -304,16 +307,17 @@
   mix-blend-mode: difference;
 }
 
-.pup {
+.popup {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   border: 2px solid #000;
   padding: 30px;
-  inline-size: 353px;
+  width: 100%;
+  max-width: 353px;
 }
 
-.pup__decription {
+.popup__decription {
   justify-content: center;
   align-items: center;
   margin-block-end: 30px;
@@ -321,19 +325,19 @@
   font-size: var(--accent-font-size);
 }
 
-.pup-text {
+.popup-text {
   line-height: 150%;
   text-transform: uppercase;
 }
-.pup[open] .pup__decription {
+.popup[open] .popup__decription {
   display: flex;
 }
 
-.pup[open] {
+.popup[open] {
   display: flex;
 }
 
-.pup-icon {
+.popup-icon {
   width: 5.6em;
   margin-inline-end: 20px;
 }
@@ -343,12 +347,12 @@ dialog::backdrop {
   background: #000;
 }
 
-.pup-button {
+.popup-button {
   text-transform: uppercase;
   inline-size: 100%;
 }
 
-.pup__form {
+.popup__form {
   inline-size: 100%;
 }
 
@@ -380,11 +384,11 @@ dialog::backdrop {
     flex-direction: column;
   }
 
-  .pup {
+  .popup {
     padding: 30px 42px;
   }
 
-  .pup-icon {
+  .popup-icon {
     margin-inline-end: 12px;
   }
 }
