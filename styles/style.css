@@ -4,6 +4,7 @@
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
@@ -16,7 +17,7 @@
 .page {
   padding: 100px 0;
   font-family: var(--main-font), sans-serif;
-  font-size: var(--main-font-s, 18px);
+  font-size: var(--main-font-size, 18px);
   background-image: var(--body-pattern);
   background-size: cover;
   background-attachment: fixed;
@@ -37,20 +38,20 @@
     clamp(7.5rem, 7.1479rem + 1.5023vw, 8rem);
   font-weight: var(--main-font-weight);
   text-transform: uppercase;
-  background-color: var(--main-color);
+  background-color: var(--bg-main-color);
 }
 
 .header__logo {
   margin-block-end: 20px;
   font-family: var(--accent-font), sans-serif;
-  font-size: var(--header-logo-text, 1.5vw);
+  font-size: var(--header-logo, 1.5vw);
   text-align: center;
   text-decoration: none;
 }
 
 .header__title {
   font-family: var(--accent-font), sans-serif;
-  font-size: var(--head-text, 0.8vw);
+  font-size: var(--header-heading, 0.8vw);
 }
 
 .cards {
@@ -59,7 +60,7 @@
   gap: 52px;
 }
 
-.card__im-cont {
+.card__image-container {
   position: relative;
   border-block-start: 2px solid #000;
   border-block-end: 2px solid #000;
@@ -67,7 +68,7 @@
 
 .card {
   border: 2px solid #000;
-  background-color: var(--main-color);
+  background-color: var(--bg-main-color);
 }
 
 .card__title {
@@ -95,8 +96,8 @@
   color: #000;
   font-family: var(--accent-font), sans-serif;
   font-size: var(--accent-font-size, 14px);
-  text-shadow: -1px 0 var(--accent-stroke), 0 1px var(--accent-stroke),
-    1px 0 var(--accent-stroke), 0 -1px var(--accent-stroke);
+  text-shadow: -1px 0 var(--accent-font-stroke), 0 1px var(--accent-font-stroke),
+    1px 0 var(--accent-font-stroke), 0 -1px var(--accent-font-stroke);
   mix-blend-mode: hard-light;
 }
 
@@ -113,36 +114,12 @@
   line-height: 117%;
 }
 
-.card__icon-button:focus {
-  outline: none;
-}
-
-.card__icon-button {
-  align-self: center;
-  border: transparent;
-  padding: 0;
-  outline: 2px solid transparent;
-  background: none;
-  transition: outline 0.3s ease;
-  cursor: pointer;
-  inline-size: 39px;
-  block-size: 34px;
-}
-
-.card__icon-button:focus-visible {
-  outline: 2px solid #000;
-}
-
-.filter-saturate {
-  filter: saturate(200%);
-}
-
 .filter-sepia {
   filter: sepia(80%);
 }
 
-.filter-invert {
-  filter: invert(0.9);
+.filter-saturate {
+  filter: saturate(200%);
 }
 
 .filter-grayscale {
@@ -157,8 +134,32 @@
   filter: contrast(20%);
 }
 
+.filter-invert {
+  filter: invert(0.9);
+}
+
 .filter-multiple {
   filter: sepia(1) contrast(2) brightness(200%);
+}
+
+.card__icon-button {
+  align-self: center;
+  border: transparent;
+  padding: 0;
+  outline: 2px solid transparent;
+  background: none;
+  transition: outline 0.3s ease;
+  cursor: pointer;
+  inline-size: 39px;
+  block-size: 34px;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid #000;
 }
 
 .sparks {
@@ -166,13 +167,13 @@
 }
 
 .core {
-  fill: var(--main-color);
+  fill: var(--bg-main-color);
   transition: fill 0.3s linear;
   transition-delay: 0.03s;
 }
 
 .main-body {
-  fill: var(--main-color);
+  fill: var(--bg-main-color);
   transition: fill 0.3s linear;
 }
 
@@ -242,16 +243,12 @@
   border: 2px solid var(--accent-color);
   padding: 10px 17px;
   overflow: hidden;
-  color: var(--butn-color);
+  color: var(--font-button-color);
   font-family: var(--accent-font), fantasy;
   font-size: var(--accent-font-size);
-  background-color: var(--main-color);
+  background-color: var(--bg-main-color);
   transition: box-shadow 0.3s ease;
   cursor: pointer;
-}
-
-.button:hover::after {
-  transform: scale(1);
 }
 
 .button::after {
@@ -264,7 +261,11 @@
   transform-origin: left;
 }
 
-.button__floppa {
+.button:hover::after {
+  transform: scale(1);
+}
+
+.button__save-icon {
   position: relative;
   z-index: 1;
   block-size: 1.5em;
@@ -283,7 +284,7 @@
   box-shadow: 2px 2px 0 0 #000;
 }
 
-.card__contr {
+.card__controls {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -291,7 +292,7 @@
   padding: 0 25px 25px;
 }
 
-.button__types {
+.button__type-save {
   z-index: 1;
   display: flex;
   align-items: center;
@@ -317,6 +318,11 @@
   max-width: 353px;
 }
 
+.popup-text {
+  line-height: 150%;
+  text-transform: uppercase;
+}
+
 .popup__decription {
   justify-content: center;
   align-items: center;
@@ -325,21 +331,17 @@
   font-size: var(--accent-font-size);
 }
 
-.popup-text {
-  line-height: 150%;
-  text-transform: uppercase;
-}
-.popup[open] .popup__decription {
-  display: flex;
+.popup-icon {
+  width: 5.6em;
+  margin-inline-end: 20px;
 }
 
 .popup[open] {
   display: flex;
 }
 
-.popup-icon {
-  width: 5.6em;
-  margin-inline-end: 20px;
+.popup[open] .popup__decription {
+  display: flex;
 }
 
 dialog::backdrop {
@@ -356,18 +358,7 @@ dialog::backdrop {
   inline-size: 100%;
 }
 
-@supports (
-  (text-stroke: 1px var(--accent-stroke)) or
-    (-webkit-text-stroke: 1px var(--accent-stroke))
-) {
-  .card__image-label {
-    text-shadow: none;
-    text-stroke: 1px var(--accent-stroke);
-    -webkit-text-stroke: 1px var(--accent-stroke);
-  }
-}
-
-@media (width <= 375px) {
+@media (width <=375px) {
   .card__image-label {
     right: 13px;
   }
@@ -376,12 +367,12 @@ dialog::backdrop {
     padding: 5px 10px;
   }
 
-  .button__floppa {
-    block-size: 2em;
+  .button__type-save {
+    flex-direction: column;
   }
 
-  .button__types {
-    flex-direction: column;
+  .button__save-icon {
+    block-size: 2em;
   }
 
   .popup {
@@ -390,5 +381,16 @@ dialog::backdrop {
 
   .popup-icon {
     margin-inline-end: 12px;
+  }
+}
+
+@supports (
+  (text-stroke: 1px var(--accent-font-stroke)) or
+    (-webkit-text-stroke: 1px var(--accent-font-stroke))
+) {
+  .card__image-label {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--accent-font-stroke);
+    text-stroke: 1px var(--accent-font-stroke);
   }
 }
