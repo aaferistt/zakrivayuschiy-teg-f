@@ -43,7 +43,7 @@
 
 .header__logo {
   margin-block-end: 20px;
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font), fantasy;
   font-size: var(--header-logo, 1.5vw);
   text-align: center;
   text-decoration: none;

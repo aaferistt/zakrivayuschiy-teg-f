@@ -2,7 +2,7 @@
   --main-font: Inter-Variable, sans-serif;
   --main-font-weight: 400;
   --main-font-size: 18px;
-  --accent-font: PressStart2P, sans-serif;
+  --accent-font: PressStart2P, fantasy;
   --accent-font-weight: 700;
   --header-logo: clamp(3.0625rem, 1.9348rem + 4.8632vw, 4.0625rem);
   --header-heading: clamp(0.875rem, 0.2407rem + 2.7356vw, 1.4375rem);
